@@ -59,17 +59,17 @@ html {
 }
 @media screen and (max-width: 39.9375em) {
   .container::before {
-    background-image: url("./assets/mobile/image-host.jpg");
+    background-image: url("../assets/mobile/image-host.jpg");
   }
 }
 @media screen and (min-width: 40em) {
   .container::before {
-    background-image: url("./assets/tablet/image-host.jpg");
+    background-image: url("../assets/tablet/image-host.jpg");
   }
 }
 @media screen and (min-width: 64em) {
   .container::before {
-    background-image: url("./assets/desktop/image-host.jpg");
+    background-image: url("../assets/desktop/image-host.jpg");
   }
 }
 

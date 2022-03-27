@@ -1,0 +1,25 @@
+@use "../abstracts/" as *;
+@import url("https://fonts.googleapis.com/css2?family=Chivo:wght@300;700&display=swap");
+
+body {
+  font-family: "chivo", sans-serif;
+  font-weight: 300;
+}
+
+.title {
+  font-size: 3.25rem;
+  line-height: 62px;
+  font-weight: 300;
+  @include breakpoint-down(small) {
+    font-size: 1.625rem;
+    line-height: 38px;
+  }
+}
+
+.body {
+  font-weight: 300;
+  @include breakpoint-down(small) {
+    font-size: 0.938rem;
+    line-height: 25px;
+  }
+}

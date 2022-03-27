@@ -1,0 +1,107 @@
+@use "../abstracts/" as *;
+@use "../base/" as *;
+
+// NOTES: next add mediaQ for responsive background
+body,
+html {
+  background-color: $darkBlue;
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+
+  &::before {
+    content: "";
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.2;
+
+    @include breakpoint-down(small) {
+      background-image: url(/assets/mobile/image-host.jpg);
+    }
+    @include breakpoint-up(medium) {
+      background-image: url(/assets/tablet/image-host.jpg);
+    }
+    @include breakpoint-up(large) {
+      background-image: url(/assets/desktop/image-host.jpg);
+    }
+  }
+}
+
+// Responsive!!!!!!
+.infotainer {
+  position: relative;
+  margin: 0 24px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  padding: 62px 0 57px 0px;
+}
+
+.title {
+  color: $white;
+  &__highlight {
+    color: $green;
+  }
+  @include breakpoint-down(small) {
+    text-align: center;
+  }
+}
+
+.body {
+  @include breakpoint-down(small) {
+    color: $lightGrey;
+    text-align: center;
+    padding: 16px 0 33px 0;
+  }
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 15px;
+}
+
+.requestAccess {
+  display: flex;
+  flex-direction: column;
+  padding-top: 48px;
+}
+
+.inputBox {
+  width: 100%;
+  height: 46px;
+  border: none;
+  border-radius: 25px;
+  font-family: "chivo", sans-serif;
+  font-size: 0.875rem;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+#emailInput {
+  color: $white;
+  background-color: $darkGrey;
+  padding-left: 32px;
+  margin-bottom: 16px;
+  &::placeholder {
+    color: $lightGrey;
+  }
+}
+
+#btnInput {
+  background-color: $green;
+  text-align: center;
+  cursor: pointer;
+  &::placeholder {
+    color: $darkBlue;
+  }
+}

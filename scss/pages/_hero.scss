@@ -22,13 +22,13 @@ html {
     opacity: 0.2;
 
     @include breakpoint-down(small) {
-      background-image: url("../assets/mobile/image-host.jpg");
+      background-image: url("../../assets/mobile/image-host.jpg");
     }
     @include breakpoint-up(medium) {
-      background-image: url("../assets/tablet/image-host.jpg");
+      background-image: url("../../assets/tablet/image-host.jpg");
     }
     @include breakpoint-up(large) {
-      background-image: url("../assets/desktop/image-host.jpg");
+      background-image: url("../../assets/desktop/image-host.jpg");
     }
   }
 }

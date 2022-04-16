@@ -9,26 +9,34 @@ html {
 }
 
 .container {
-  height: 100%;
-
   &::before {
     content: "";
-    background-size: cover;
     position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.2;
 
     @include breakpoint-down(small) {
       background-image: url("../assets/mobile/image-host.jpg");
+      background-size: cover;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.2;
     }
     @include breakpoint-up(medium) {
       background-image: url("../assets/tablet/image-host.jpg");
+      height: 767px;
+      width: 491px;
+      background-size: cover;
+      right: 0px;
     }
-    @include breakpoint-up(large) {
+    @include breakpoint-up(xlarge) {
       background-image: url("../assets/desktop/image-host.jpg");
+      position: absolute;
+      top: 50%;
+      width: 888px;
+      height: 640px;
+      margin: 0;
+      transform: translate(0, -50%);
     }
   }
 }
@@ -36,13 +44,32 @@ html {
 // Responsive!!!!!!
 .infotainer {
   position: relative;
-  margin: 0 24px;
+
+  @include breakpoint-down(small) {
+    margin: 0 24px;
+  }
+  @include breakpoint-up(medium) {
+    display: flex;
+    flex-direction: column;
+    background-color: $darkBlue;
+    width: 635px;
+    margin-left: 36px;
+    margin-top: 72px;
+  }
+  @include breakpoint-up(large) {
+    width: 723px;
+  }
 }
 
 .logo {
   display: flex;
   justify-content: center;
   padding: 62px 0 57px 0px;
+
+  @include breakpoint-up(medium) {
+    margin-left: 36px;
+    justify-content: flex-start;
+  }
 }
 
 .title {
@@ -53,27 +80,53 @@ html {
   @include breakpoint-down(small) {
     text-align: center;
   }
+  @include breakpoint-up(medium) {
+    padding: 93px 0 31px 0;
+    margin: 0;
+    order: 1;
+  }
 }
 
 .body {
+  color: $lightGrey;
   @include breakpoint-down(small) {
-    color: $lightGrey;
     text-align: center;
     padding: 16px 0 33px 0;
+  }
+  @include breakpoint-up(medium) {
+    width: 445px;
+    margin: 0;
+    order: 2;
   }
 }
 
 .services {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 15px;
+  @include breakpoint-down(small) {
+    justify-content: space-between;
+    width: 100%;
+    height: 15px;
+  }
+  @include breakpoint-up(medium) {
+    order: 4;
+  }
 }
 
+.icon {
+  @include breakpoint-up(medium) {
+    padding-right: 35px;
+  }
+}
 .requestAccess {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding-top: 48px;
+  @include breakpoint-up(medium) {
+    order: 3;
+    padding-bottom: 64px;
+    width: 427px;
+  }
 }
 
 .inputBox {
@@ -85,10 +138,6 @@ html {
   font-size: 0.875rem;
   line-height: 28px;
   font-weight: 700;
-}
-
-.input {
-  font-size: 1rem;
 }
 
 #emailInput {
@@ -107,5 +156,30 @@ html {
   cursor: pointer;
   &::placeholder {
     color: $darkBlue;
+  }
+  @include breakpoint-up(medium) {
+    position: absolute;
+    right: -10px;
+    width: 162px;
+    transform: scale(0.8);
+  }
+}
+
+.dots {
+  display: inline-block;
+  position: absolute;
+
+  @include breakpoint-down(small) {
+    display: none;
+  }
+
+  @include breakpoint-up(medium) {
+    bottom: 0;
+    padding-left: 30px;
+  }
+
+  @include breakpoint-up(xlarge) {
+    bottom: 87px;
+    right: 0;
   }
 }

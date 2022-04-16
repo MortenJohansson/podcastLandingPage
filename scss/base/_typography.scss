@@ -14,6 +14,14 @@ body {
     font-size: 1.625rem;
     line-height: 38px;
   }
+  @include breakpoint-up(medium) {
+    font-size: 3rem;
+    line-height: 56px;
+  }
+  @include breakpoint-up(xlarge) {
+    font-size: 3.25rem;
+    line-height: 62px;
+  }
 }
 
 .body {
@@ -21,5 +29,9 @@ body {
   @include breakpoint-down(small) {
     font-size: 0.938rem;
     line-height: 25px;
+  }
+  @include breakpoint-up(medium) {
+    font-size: 1.125rem;
+    line-height: 28px;
   }
 }
